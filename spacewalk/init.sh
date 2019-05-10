@@ -1,9 +1,9 @@
 #!/bin/bash
 sleep 20
-if [ ! -f  /isSet ]; then
+if [ ! -f  /mnt2/isSet ]; then
   /init_database.sh
   spacewalk-setup --external-postgresql --answer-file=/answer.txt --clear-db --skip-services-restart --non-interactive
-  touch /isSet 
+  touch /mnt2/isSet 
 fi
 
 

@@ -9,6 +9,7 @@ services:
      - "5269:5269"
     volumes:
       - "$PWD/centos7:/mnt"
+      - "$PWD/spacewalk_status:/mnt2"
     environment: 
       POSTGRES_USER: 'postgres'
       POSTGRES_DB: 'postgres'
