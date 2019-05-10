@@ -5,8 +5,10 @@ services:
      - "5222:5222"
      - "443:443"
      - "80:80"
-     - "69:69"
+     - "69:69/udp"
      - "5269:5269"
+    volumes:
+      - "$PWD/centos7:/mnt"
     environment: 
       POSTGRES_USER: 'postgres'
       POSTGRES_DB: 'postgres'
@@ -15,6 +17,8 @@ services:
   postgres:
     links: ["spacewalk"]
     image: compus.physik.uni-greifswald.de:5000/marc/spacewalkpostgres
+    volumes:
+      - "$PWD/postgresql_data:/var/lib/postgresql/data"
     restart: always
     environment: 
       POSTGRES_USER: 'postgres'

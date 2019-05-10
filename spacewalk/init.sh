@@ -1,7 +1,7 @@
 #!/bin/bash
 sleep 20
-/init_database.sh
-spacewalk-setup --external-postgresql --answer-file=/answer.txt --clear-db --skip-services-restart --non-interactive
+#/init_database.sh
+#spacewalk-setup --external-postgresql --answer-file=/answer.txt --clear-db --skip-services-restart --non-interactive
 # set permissions on mounted storages
 chown apache.apache -R /var/satellite
 
