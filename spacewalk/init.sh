@@ -6,7 +6,6 @@ if [ ! -f  /mnt2/isSet ]; then
   touch /mnt2/isSet 
 fi
 
-
 # set permissions on mounted storages
 chown apache.apache -R /var/satellite
 
@@ -24,6 +23,8 @@ rhn-search start
 /usr/bin/sm -c /etc/jabberd/sm.xml &
 /usr/bin/c2s -c /etc/jabberd/c2s.xml &
 /usr/bin/s2s -c /etc/jabberd/s2s.xml &
+cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
+/usr/sbin/in.tftpd -L -s /var/lib/tftpboot/ & 
 
 # start httpd
 [ -f /var/run/httpd/httpd.pid ] && rm /var/run/httpd/httpd.pid
@@ -31,3 +32,4 @@ httpd -k start
 
 # start tomcat
 /usr/libexec/tomcat/server start
+
