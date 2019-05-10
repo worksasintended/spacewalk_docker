@@ -13,7 +13,8 @@ services:
     environment: 
       POSTGRES_USER: 'postgres'
       POSTGRES_DB: 'postgres'
-      POSTGRES_PASSWORD: 'postgres' 
+      POSTGRES_PASSWORD: 'postgres'
+      HOSTNAME: "tesla2.physik.uni-greifswald.de" 
     image: compus.physik.uni-greifswald.de:5000/marc/spacewalk
   postgres:
     links: ["spacewalk"]

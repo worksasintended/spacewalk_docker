@@ -6,6 +6,7 @@ RUN yum -y install spacewalk-setup-postgresql install spacewalk-postgresql space
 #fix wait for tomcat issue
 RUN sed -i 's/\(^\s*wait_for_tomcat\)/#\1/g' /usr/bin/spacewalk-setup &&\
   sed -i '3i\echo "Docker workaround - skip restarting..." && exit 0\' /usr/sbin/spacewalk-service
+RUN cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
 COPY init_database.sh /
 COPY init.sh /
 COPY answer.txt /

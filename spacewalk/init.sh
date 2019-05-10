@@ -1,5 +1,8 @@
 #!/bin/bash
 sleep 20
+
+hostnamectl set-hostname $HOSTNAME
+
 if [ ! -f  /mnt2/isSet ]; then
   /init_database.sh
   spacewalk-setup --external-postgresql --answer-file=/answer.txt --clear-db --skip-services-restart --non-interactive
@@ -23,7 +26,6 @@ rhn-search start
 /usr/bin/sm -c /etc/jabberd/sm.xml &
 /usr/bin/c2s -c /etc/jabberd/c2s.xml &
 /usr/bin/s2s -c /etc/jabberd/s2s.xml &
-cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
 /usr/sbin/in.tftpd -L -s /var/lib/tftpboot/ & 
 
 # start httpd
