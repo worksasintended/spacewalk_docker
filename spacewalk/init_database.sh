@@ -1,0 +1,2 @@
+#!/bin/bash
+PGPASSWORD=$POSTGRES_PASSWORD psql -d $POSTGRES_DB -U $POSTGRES_USER -h postgres -c 'CREATE EXTENSION pltclu'

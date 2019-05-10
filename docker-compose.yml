@@ -8,14 +8,18 @@ services:
      - "80:80"
      - "69:69"
      - "5269:5269"
+    environment: 
+      POSTGRES_USER: 'postgres'
+      POSTGRES_DB: 'postgres'
+      POSTGRES_PASSWORD: 'postgres' 
     image: worksasintended/spacewalk
-    #  postgres:
-    #build: postgres/
-    #links: ["spacewalk"]
-    #image: worksasintended/spacewalkpostgres
-    #restart: always
-    #environment: 
-    #  POSTGRES_USER: postgres
-    # POSTGRES_DB: postgres
-    #  POSTGRES_PASSWORD: postgres 
+  postgres:
+    build: postgres/
+    links: ["spacewalk"]
+    image: worksasintended/spacewalkpostgres
+    restart: always
+    environment: 
+      POSTGRES_USER: 'postgres'
+      POSTGRES_DB: 'postgres'
+      POSTGRES_PASSWORD: 'postgres' 
 
