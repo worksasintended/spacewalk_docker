@@ -1,0 +1,21 @@
+version: '3'
+services:
+  spacewalk:
+    build: spacewalk/
+    ports:
+     - "5222:5222"
+     - "443:443"
+     - "80:80"
+     - "69:69"
+     - "5269:5269"
+    image: worksasintended/spacewalk
+    #  postgres:
+    #build: postgres/
+    #links: ["spacewalk"]
+    #image: worksasintended/spacewalkpostgres
+    #restart: always
+    #environment: 
+    #  POSTGRES_USER: postgres
+    # POSTGRES_DB: postgres
+    #  POSTGRES_PASSWORD: postgres 
+
