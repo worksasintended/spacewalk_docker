@@ -1,1 +1,18 @@
+admin-email = root@localhost
+ssl-set-cnames = spacewalk2
+ssl-set-org = Spacewalk Org
+ssl-set-org-unit = spacewalk
+ssl-set-city = My City
+ssl-set-state = My State
+ssl-set-country = US
+ssl-password = spacewalk
+ssl-set-email = root@localhost
+ssl-config-sslvhost = Y
+db-backend=postgresql
+db-name=postgres
+db-user=postgres
+db-password=postgres
+db-host=postgres
+db-port=5432
+enable-tftp=Y
 
