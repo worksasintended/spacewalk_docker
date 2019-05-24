@@ -12,3 +12,4 @@ COPY init.sh /
 COPY answer.txt /
 # answer.txt hard coded databsse options, change to variables set in startup
 CMD  /init.sh
+#init channels using spacewalk-common-channels '*'
